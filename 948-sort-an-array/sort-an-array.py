@@ -24,17 +24,15 @@ class Solution(object):
                 nums[i] = right[k]
                 k += 1
                 i += 1
-        
+
         def mergeSort(arr, l, r):
             if l == r:
                 return
-
+            
             m = (l + r) // 2
             mergeSort(arr, l, m)
             mergeSort(arr, m + 1, r)
             merge(arr, l, m, r)
             return
-        
         mergeSort(nums, 0, len(nums))
         return nums
-        
