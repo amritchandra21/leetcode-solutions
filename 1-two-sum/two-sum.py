@@ -1,9 +1,12 @@
-class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
-        hMap = {}
+class Solution(object):
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        res = {}
         for i in range(len(nums)):
-            diff = target - nums[i]
-            if diff in hMap:
-                return [hMap[diff], i]
-            hMap[nums[i]] = i
-            
+            if target - nums[i] in res:
+                return [res[target - nums[i]], i]
+            res[nums[i]] = i
