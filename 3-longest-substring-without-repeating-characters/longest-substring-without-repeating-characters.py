@@ -4,14 +4,13 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
-        cSet = set()
+        dup = set()
+        maxLen = 0
         l = 0
-        res = 0
-
-        for r in range(len(s)):
-            while s[r] in cSet:
-                cSet.remove(s[l])
+        for r in range(len(s)): #pwwkew
+            while s[r] in dup:
+                dup.remove(s[l])
                 l += 1
-            cSet.add(s[r])
-            res = max(res, len(cSet))
-        return res
+            maxLen = max(maxLen, r - l + 1)
+            dup.add(s[r])
+        return maxLen 
