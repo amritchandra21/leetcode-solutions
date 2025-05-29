@@ -5,9 +5,10 @@ class Solution(object):
         :rtype: List[List[str]]
         """
         final = defaultdict(list)
-        for s in strs:
-            count = [0] * 26
-            for c in s:
-                count[ord(c) - ord('a')] += 1
-            final[tuple(count)].append(s)
+        for string in strs:
+            charCount = [0] * 26
+            for c in string:
+                charCount[ord(c) - ord("a")] += 1
+            final[tuple(charCount)].append(string)
+
         return final.values()
