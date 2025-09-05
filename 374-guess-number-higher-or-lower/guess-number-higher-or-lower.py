@@ -11,9 +11,10 @@ class Solution:
         upperCheck = n
         while True:
             midCheck = (lowCheck + upperCheck) // 2
-            if guess(midCheck) == 1:
+            g = guess(midCheck)
+            if g > 0:
                 lowCheck = midCheck + 1
-            elif guess(midCheck) == -1:
+            elif g < 0:
                 upperCheck = midCheck - 1
-            elif guess(midCheck) == 0:
+            else:
                 return midCheck
